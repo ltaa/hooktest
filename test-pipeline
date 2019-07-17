@@ -6,12 +6,10 @@ pipeline {
     }
 
     stages {
-      stage("checkout capp-faq-templates") {
-        stage("set config for github hook") {
-          steps {
-            script {
-              properties([pipelineTriggers([githubPush()])])
-            }
+      stage("set config for github hook") {
+        steps {
+          script {
+            properties([pipelineTriggers([githubPush()])])
           }
         }
       }
